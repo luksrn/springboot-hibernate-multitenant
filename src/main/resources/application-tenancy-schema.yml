@@ -3,7 +3,7 @@ multitenancy:
   strategy: SCHEMA
   dataSource:
     tenantId: default
-    url: jdbc:postgresql://localhost:5432/multitenancy_schema
+    url: jdbc:postgresql://database-postgres.desenv-local:5432/multitenancy_schema
     username: postgres
     password: changeit
     driverClassName: org.postgresql.Driver
