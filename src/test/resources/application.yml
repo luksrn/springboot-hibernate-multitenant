@@ -1,0 +1,12 @@
+spring:
+  jpa:
+    database: POSTGRESQL
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
+
+# Bring Postgres docker images using: 
+# docker run -d -p 5532:5432 -e DB_NAME=db_dvdrental -e DB_USER=user_dvdrental -e DB_PASSWD=changeit asimio/db_dvdrental:latest
+# 172.16.69.133 = Fusion VM Docker host, 5532 Docker host port mapped to container port
+

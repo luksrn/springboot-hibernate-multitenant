@@ -1,0 +1,23 @@
+
+multitenancy:
+  strategy: DATASOURCE
+  dataSources:
+    -
+      tenantId: public
+      bancoAutenticacao: true
+      url: jdbc:postgresql://localhost:5432/multitenancy_database_adm
+      username: postgres
+      password: changeit
+      driverClassName: org.postgresql.Driver	
+    -
+      tenantId: agencia_a
+      url: jdbc:postgresql://localhost:5432/multitenancy_database_a
+      username: postgres
+      password: changeit
+      driverClassName: org.postgresql.Driver
+    -
+      tenantId: agencia_b
+      url: jdbc:postgresql://localhost:5432/multitenancy_database_b
+      username: postgres
+      password: changeit
+      driverClassName: org.postgresql.Driver

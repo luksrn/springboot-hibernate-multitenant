@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Logged</title>
+    </head>
+    <body>
+    	<h3>Listagem</h3>
+    	
+    	<a href="cadastrar">Cadastrar</a> | <a href="/logout">Sair</a>
+    	
+        <table>
+		  <thead>
+		    <tr>
+		      <th >ID</th>
+		      <th >Nome</th>
+		      <th colspan="2"></th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr th:each="cliente: ${clientes}">
+		      <td th:text="${cliente.id}">1</td>
+		      <td th:text="${cliente.nome}">Lucas Oliveira</td>
+		      <th><a th:href="@{'editar/' + ${cliente.id}}">Editar</a></th>
+		      <th>
+		      	<form th:action="@{'remover/' +  ${cliente.id}}" method="post">
+		      		 <input type="submit" value="Remover" />
+		      	</form>
+		      	</th>
+		    </tr>
+		  </tbody>
+		</table>
+           
+           
+         <hr/>
+         
+           <table>
+		  <thead>
+		  	<tr>
+		  		<th>JDBC</th>
+		  	</tr>
+		    <tr>
+		      <th >ID</th>
+		      <th >Nome</th>
+			 <th colspan="2"></th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr th:each="cliente: ${clientes}">
+		      <td th:text="${cliente.id}">1</td>
+		      <td th:text="${cliente.nome}">Lucas Oliveira</td>
+		      <th><a th:href="@{'editar/' + ${cliente.id}}">Editar</a></th>
+		      <th>
+		      	<form th:action="@{'remover/' +  ${cliente.id}}" method="post">
+		      		 <input type="submit" value="Remover" />
+		      	</form>
+		      	</th>
+		    </tr>
+		  </tbody>
+		</table>
+    </body>
+</html>

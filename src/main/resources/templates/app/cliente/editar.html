@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Logged</title>
+    </head>
+    <body>
+        
+        	
+    	<a href="listar">Listagem</a> | <a href="/logout">Sair</a>
+    	
+    	<h3>Form de Edição</h3>
+        
+        <form action="listar.html" 
+        	th:attr="action=@{/app/cliente/editar}"
+        	th:object="${cliente}"
+        	method="POST">
+		  <fieldset>
+		  	<span>Nome:</span>
+		  	<input type="hidden" th:field="*{id}" />
+		    <input type="text" th:field="*{nome}" />
+		    <input type="submit" value="Editar" />
+		    <input type="reset" value="Reset" />
+		  </fieldset>
+		</form>
+		
+		
+    </body>
+</html>
