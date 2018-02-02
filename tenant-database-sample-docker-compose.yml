@@ -1,0 +1,35 @@
+version: "3"
+services:
+  any_database:
+    build: 
+      context: .
+      dockerfile: ./database-postgres.dockerfile
+      args:
+        - SCRIPT_INITDB=./docker/postgres-database/V1__construcao_inicial_any.sql
+    ports:
+      - "5433:5432"
+    networks: 
+      - desenv-local
+  a_database:
+    build: 
+      context: .
+      dockerfile: ./database-postgres.dockerfile
+      args:
+        - SCRIPT_INITDB=./docker/postgres-database/V1__construcao_inicial_database_a.sql
+    ports:
+      - "5434:5432"
+    networks: 
+      - desenv-local
+  b_database:
+    build: 
+      context: .
+      dockerfile: ./database-postgres.dockerfile
+      args:
+        - SCRIPT_INITDB=./docker/postgres-database/V1__construcao_inicial_database_b.sql
+    ports:
+      - "5435:5432"
+    networks: 
+      - desenv-local
+networks:
+  desenv-local:
+    driver: bridge
